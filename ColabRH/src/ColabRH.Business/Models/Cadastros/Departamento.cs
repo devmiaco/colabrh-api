@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ColabRH.Business.Models.Cadastros
+namespace ColabRH.Business.Models.Cadastros;
+
+public class Departamento : Entity
 {
-    internal class Departamento
-    {
-    }
+    public Guid GrupoEconomicoId { get; set; }
+
+    public string Nome { get; set; }
+    public string CodigoMapeamento { get; set; }
+
+    public GrupoEconomico GrupoEconomico { get; set; }    
 }

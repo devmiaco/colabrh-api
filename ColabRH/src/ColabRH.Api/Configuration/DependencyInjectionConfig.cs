@@ -21,12 +21,16 @@ public static class DependencyInjectionConfig
         services.AddScoped<IEmpresaRepository, EmpresaRepository>();
         services.AddScoped<IGradeRepository, GradeRepository>();
         services.AddScoped<ICargoRepository, CargoRepository>();
+        services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
+        services.AddScoped<ISindicatoRepository, SindicatoRepository>();
 
         services.AddScoped<INotificador, Notificador>();
         services.AddScoped<IGrupoEconomicoService, GrupoEconomicoService>();
         services.AddScoped<IEmpresaService, EmpresaService>();
         services.AddScoped<IGradeService, GradeService>();
         services.AddScoped<ICargoService, CargoService>();
+        services.AddScoped<IDepartamentoService, DepartamentoService>();
+        services.AddScoped<ISindicatoService, SindicatoService>();
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped<IUser, AspNetUser>();
