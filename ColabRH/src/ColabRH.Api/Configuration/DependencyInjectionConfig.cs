@@ -23,6 +23,7 @@ public static class DependencyInjectionConfig
         services.AddScoped<ICargoRepository, CargoRepository>();
         services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
         services.AddScoped<ISindicatoRepository, SindicatoRepository>();
+        services.AddScoped<IVinculoRepository, VinculoRepository>();
 
         services.AddScoped<INotificador, Notificador>();
         services.AddScoped<IGrupoEconomicoService, GrupoEconomicoService>();
@@ -31,6 +32,7 @@ public static class DependencyInjectionConfig
         services.AddScoped<ICargoService, CargoService>();
         services.AddScoped<IDepartamentoService, DepartamentoService>();
         services.AddScoped<ISindicatoService, SindicatoService>();
+        services.AddScoped<IVinculoService, VinculoService>();
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped<IUser, AspNetUser>();
