@@ -4,14 +4,14 @@
     "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Data\\ColabRH.Data.csproj": {}
   },
   "projects": {
-    "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Data\\ColabRH.Data.csproj": {
+    "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Business\\ColabRH.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Data\\ColabRH.Data.csproj",
-        "projectName": "ColabRH.Data",
-        "projectPath": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Data\\ColabRH.Data.csproj",
+        "projectUniqueName": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Business\\ColabRH.Business.csproj",
+        "projectName": "ColabRH.Business",
+        "projectPath": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Business\\ColabRH.Business.csproj",
         "packagesPath": "C:\\Users\\FabioMiaço\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Data\\obj\\",
+        "outputPath": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\FabioMiaço\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,85 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.7.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Data\\ColabRH.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Data\\ColabRH.Data.csproj",
+        "projectName": "ColabRH.Data",
+        "projectPath": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Data\\ColabRH.Data.csproj",
+        "packagesPath": "C:\\Users\\FabioMiaço\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\FabioMiaço\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Business\\ColabRH.Business.csproj": {
+                "projectPath": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Business\\ColabRH.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

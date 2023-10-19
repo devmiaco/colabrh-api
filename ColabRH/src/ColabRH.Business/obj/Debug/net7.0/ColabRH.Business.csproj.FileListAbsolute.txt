@@ -9,3 +9,4 @@ C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Business\obj\Debug\net7.0\C
 C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Business\obj\Debug\net7.0\refint\ColabRH.Business.dll
 C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Business\obj\Debug\net7.0\ColabRH.Business.pdb
 C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Business\obj\Debug\net7.0\ref\ColabRH.Business.dll
+C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Business\obj\Debug\net7.0\ColabRH.Business.csproj.AssemblyReference.cache

@@ -9,3 +9,7 @@ C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Data\obj\Debug\net7.0\Colab
 C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Data\obj\Debug\net7.0\refint\ColabRH.Data.dll
 C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Data\obj\Debug\net7.0\ColabRH.Data.pdb
 C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Data\obj\Debug\net7.0\ref\ColabRH.Data.dll
+C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Data\bin\Debug\net7.0\ColabRH.Business.dll
+C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Data\bin\Debug\net7.0\ColabRH.Business.pdb
+C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Data\obj\Debug\net7.0\ColabRH.Data.csproj.AssemblyReference.cache
+C:\dev\repos\ColabRH\colabrh-api\ColabRH\src\ColabRH.Data\obj\Debug\net7.0\ColabRH.Data.csproj.CopyComplete

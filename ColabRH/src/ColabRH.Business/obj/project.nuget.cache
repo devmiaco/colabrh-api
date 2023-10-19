@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ppAUAJDF132rBH4uvHbWxaNULPNgL9ZcRCU90Ouis/3dTZgSIcpqJjzgmiZXU0sBHebe1y5hVfKdcPoEs2+m3g==",
+  "dgSpecHash": "z8JywDbprVT1k3+Cvs7HgV754ERc9IghjP+hlxc3VNWQqKFkHZFZJIUfDt6S/nBLX8O9jKRA99pA9+nHCuh8IQ==",
   "success": true,
   "projectFilePath": "C:\\dev\\repos\\ColabRH\\colabrh-api\\ColabRH\\src\\ColabRH.Business\\ColabRH.Business.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\FabioMiaço\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512"
+  ],
   "logs": []
 }
