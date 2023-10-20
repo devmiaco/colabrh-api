@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\Beneficios\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 

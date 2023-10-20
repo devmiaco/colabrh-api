@@ -9,4 +9,11 @@
     <PackageReference Include="FluentValidation" Version="11.7.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\Beneficios\" />
+    <Folder Include="Models\Beneficios\" />
+    <Folder Include="Services\Beneficios\" />
+    <Folder Include="Validations\Beneficios\" />
+  </ItemGroup>
+
 </Project>

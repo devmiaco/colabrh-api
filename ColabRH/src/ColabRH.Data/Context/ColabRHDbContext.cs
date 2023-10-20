@@ -22,6 +22,11 @@ public class ColabRHDbContext : DbContext
     public DbSet<Departamento> Departamentos { get; set; }
     public DbSet<Sindicato> Sindicatos { get; set; }
     public DbSet<Vinculo> Vinculos { get; set; }
+    public DbSet<Situacao> Situacoes { get; set; }
+    public DbSet<GrauParentesco> GrausParentesco { get; set; }
+    public DbSet<Operadora> Operadoras { get; set; }
+    public DbSet<Produto> Produtos { get; set; }
+    public DbSet<Plano> Planos { get; set; }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {

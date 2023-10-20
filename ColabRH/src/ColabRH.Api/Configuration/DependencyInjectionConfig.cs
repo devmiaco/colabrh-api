@@ -4,7 +4,7 @@ using ColabRH.Business.Interfaces.Cadastros;
 using ColabRH.Business.Notificacoes;
 using ColabRH.Business.Services.Cadastros;
 using ColabRH.Data.Context;
-using ColabRH.Data.Repository;
+using ColabRH.Data.Repository.Cadastros;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -24,8 +24,15 @@ public static class DependencyInjectionConfig
         services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
         services.AddScoped<ISindicatoRepository, SindicatoRepository>();
         services.AddScoped<IVinculoRepository, VinculoRepository>();
+        services.AddScoped<ISituacaoRepository, SituacaoRepository>();
+        services.AddScoped<IGrauParentescoRepository, GrauParentescoRepository>();
+
+        services.AddScoped<IOperadoraRepository, OperadoraRepository>();
+        services.AddScoped<IProdutoRepository, ProdutoRepository>();
+        services.AddScoped<IPlanoRepository, PlanoRepository>();
 
         services.AddScoped<INotificador, Notificador>();
+
         services.AddScoped<IGrupoEconomicoService, GrupoEconomicoService>();
         services.AddScoped<IEmpresaService, EmpresaService>();
         services.AddScoped<IGradeService, GradeService>();
@@ -33,6 +40,12 @@ public static class DependencyInjectionConfig
         services.AddScoped<IDepartamentoService, DepartamentoService>();
         services.AddScoped<ISindicatoService, SindicatoService>();
         services.AddScoped<IVinculoService, VinculoService>();
+        services.AddScoped<ISituacaoService, SituacaoService>();
+        services.AddScoped<IGrauParentescoService, GrauParentescoService>();
+
+        services.AddScoped<IOperadoraService, OperadoraService>();
+        services.AddScoped<IProdutoService, ProdutoService>();
+        services.AddScoped<IPlanoService, PlanoService>();
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped<IUser, AspNetUser>();
