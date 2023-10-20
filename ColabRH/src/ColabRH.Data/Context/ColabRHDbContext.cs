@@ -1,4 +1,5 @@
-﻿using ColabRH.Business.Models.Cadastros;
+﻿using ColabRH.Business.Models.Beneficios;
+using ColabRH.Business.Models.Cadastros;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -15,6 +16,7 @@ public class ColabRHDbContext : DbContext
         ChangeTracker.AutoDetectChangesEnabled = false;
     }
 
+    #region Cadastros    
     public DbSet<GrupoEconomico> GruposEconomicos { get; set; }
     public DbSet<Empresa> Empresas { get; set; }
     public DbSet<Grade> Grades { get; set; }
@@ -27,6 +29,11 @@ public class ColabRHDbContext : DbContext
     public DbSet<Operadora> Operadoras { get; set; }
     public DbSet<Produto> Produtos { get; set; }
     public DbSet<Plano> Planos { get; set; }
+    #endregion
+
+    #region Beneficios    
+    public DbSet<ContratoBeneficio> ContratosBeneficio { get; set; }
+    #endregion
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {

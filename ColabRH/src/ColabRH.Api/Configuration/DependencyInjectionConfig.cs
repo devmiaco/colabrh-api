@@ -1,9 +1,12 @@
 ﻿using ColabRH.Api.Extensions;
 using ColabRH.Business.Interfaces;
+using ColabRH.Business.Interfaces.Beneficios;
 using ColabRH.Business.Interfaces.Cadastros;
 using ColabRH.Business.Notificacoes;
+using ColabRH.Business.Services.Beneficios;
 using ColabRH.Business.Services.Cadastros;
 using ColabRH.Data.Context;
+using ColabRH.Data.Repository.Beneficios;
 using ColabRH.Data.Repository.Cadastros;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +20,8 @@ public static class DependencyInjectionConfig
     public static IServiceCollection ResolveDependencies(this IServiceCollection services)
     {
         services.AddScoped<ColabRHDbContext>();
+
+        #region Cadastro Repository        
         services.AddScoped<IGrupoEconomicoRepository, GrupoEconomicoRepository>();
         services.AddScoped<IEmpresaRepository, EmpresaRepository>();
         services.AddScoped<IGradeRepository, GradeRepository>();
@@ -26,13 +31,18 @@ public static class DependencyInjectionConfig
         services.AddScoped<IVinculoRepository, VinculoRepository>();
         services.AddScoped<ISituacaoRepository, SituacaoRepository>();
         services.AddScoped<IGrauParentescoRepository, GrauParentescoRepository>();
-
         services.AddScoped<IOperadoraRepository, OperadoraRepository>();
         services.AddScoped<IProdutoRepository, ProdutoRepository>();
         services.AddScoped<IPlanoRepository, PlanoRepository>();
+        #endregion
+
+        #region Beneficio Repository
+        services.AddScoped<IContratoBeneficioRepository, ContratoBeneficioRepository>();
+        #endregion
 
         services.AddScoped<INotificador, Notificador>();
 
+        #region Cadastro Service        
         services.AddScoped<IGrupoEconomicoService, GrupoEconomicoService>();
         services.AddScoped<IEmpresaService, EmpresaService>();
         services.AddScoped<IGradeService, GradeService>();
@@ -42,10 +52,14 @@ public static class DependencyInjectionConfig
         services.AddScoped<IVinculoService, VinculoService>();
         services.AddScoped<ISituacaoService, SituacaoService>();
         services.AddScoped<IGrauParentescoService, GrauParentescoService>();
-
         services.AddScoped<IOperadoraService, OperadoraService>();
         services.AddScoped<IProdutoService, ProdutoService>();
         services.AddScoped<IPlanoService, PlanoService>();
+        #endregion
+
+        #region Beneficio Service
+        services.AddScoped<IContratoBeneficioService, ContratoBeneficioService>();
+        #endregion
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped<IUser, AspNetUser>();
