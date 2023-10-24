@@ -2,12 +2,15 @@
 using ColabRH.Business.Interfaces;
 using ColabRH.Business.Interfaces.Beneficios;
 using ColabRH.Business.Interfaces.Cadastros;
+using ColabRH.Business.Interfaces.Funcionarios;
 using ColabRH.Business.Notificacoes;
 using ColabRH.Business.Services.Beneficios;
 using ColabRH.Business.Services.Cadastros;
+using ColabRH.Business.Services.Funcionarios;
 using ColabRH.Data.Context;
 using ColabRH.Data.Repository.Beneficios;
 using ColabRH.Data.Repository.Cadastros;
+using ColabRH.Data.Repository.Funcionarios;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -46,6 +49,13 @@ public static class DependencyInjectionConfig
         services.AddScoped<IContratoSubestipulanteRepository, ContratoSubestipulanteRepository>();
         #endregion
 
+        #region Funcionario Repository
+        services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+        services.AddScoped<IFuncionarioBeneficioRepository, FuncionarioBeneficioRepository>();
+        services.AddScoped<IDependenteRepository, DependenteRepository>();
+        services.AddScoped<IDependenteBeneficioRepository, DependenteBeneficioRepository>();
+        #endregion
+
         services.AddScoped<INotificador, Notificador>();
 
         #region Cadastro Service        
@@ -71,6 +81,13 @@ public static class DependencyInjectionConfig
         services.AddScoped<IContratoGrauParentescoService, ContratoGrauParentescoService>();
         services.AddScoped<IContratoPlanoService, ContratoPlanoService>();
         services.AddScoped<IContratoSubestipulanteService, ContratoSubestipulanteService>();
+        #endregion
+
+        #region Funcionario Service
+        services.AddScoped<IFuncionarioService, FuncionarioService>();
+        services.AddScoped<IFuncionarioBeneficioService, FuncionarioBeneficioService>();
+        services.AddScoped<IDependenteService, DependenteService>();
+        services.AddScoped<IDependenteBeneficioService, DependenteBeneficioService>();
         #endregion
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

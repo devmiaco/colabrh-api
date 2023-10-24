@@ -1,5 +1,6 @@
 ﻿using ColabRH.Business.Models.Beneficios;
 using ColabRH.Business.Models.Cadastros;
+using ColabRH.Business.Models.Funcionarios;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -39,6 +40,13 @@ public class ColabRHDbContext : DbContext
     public DbSet<ContratoGrauParentesco> ContratosGrauParentesco { get; set; }
     public DbSet<ContratoPlano> ContratosPlano { get; set; }
     public DbSet<ContratoSubestipulante> ContratosSubestipulante { get; set; }
+    #endregion
+
+    #region Funcionario
+    public DbSet<Funcionario> Funcionarios { get; set; }
+    public DbSet<Dependente> Dependentes { get; set; }
+    public DbSet<FuncionarioBeneficio> FuncionarioBeneficios { get; set; }
+    public DbSet<DependenteBeneficio> DependenteBeneficios { get; set; }
     #endregion
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

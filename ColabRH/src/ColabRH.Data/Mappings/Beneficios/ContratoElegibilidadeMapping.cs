@@ -16,11 +16,13 @@ public class ContratoElegibilidadeMapping : IEntityTypeConfiguration<ContratoEle
 
         builder.Property(p => p.ValorTitular)
             .IsRequired()
-            .HasColumnType("decimal(15,2)");
+            .HasColumnType("decimal(15,2)")
+            .HasPrecision(15, 2);
 
         builder.Property(p => p.ValorDependente)
             .IsRequired()
-            .HasColumnType("decimal(15,2)");
+            .HasColumnType("decimal(15,2)")
+            .HasPrecision(15, 2);
 
         builder.ToTable("ContratosElegibilidade");
     }

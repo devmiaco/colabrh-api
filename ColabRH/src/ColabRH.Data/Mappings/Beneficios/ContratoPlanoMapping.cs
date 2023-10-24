@@ -12,7 +12,8 @@ namespace ColabRH.Data.Mappings.Beneficios
 
             builder.Property(p => p.Valor)
             .IsRequired()
-            .HasColumnType("decimal(15,2)");
+            .HasColumnType("decimal(15,2)")
+            .HasPrecision(15, 2);
 
             builder.ToTable("ContratosPlano");
         }
