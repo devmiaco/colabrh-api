@@ -33,6 +33,12 @@ public class ColabRHDbContext : DbContext
 
     #region Beneficios    
     public DbSet<ContratoBeneficio> ContratosBeneficio { get; set; }
+    public DbSet<ContratoElegibilidade> ContratosElegibilidade { get; set; }
+    public DbSet<ContratoElegibilidadeCargo> ContratosElegibilidadeCargo { get; set; }
+    public DbSet<ContratoElegibilidadeGrade> ContratosElegibilidadeGrade { get; set; }
+    public DbSet<ContratoGrauParentesco> ContratosGrauParentesco { get; set; }
+    public DbSet<ContratoPlano> ContratosPlano { get; set; }
+    public DbSet<ContratoSubestipulante> ContratosSubestipulante { get; set; }
     #endregion
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

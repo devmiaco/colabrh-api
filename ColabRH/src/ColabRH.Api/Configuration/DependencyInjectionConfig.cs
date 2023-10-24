@@ -38,6 +38,12 @@ public static class DependencyInjectionConfig
 
         #region Beneficio Repository
         services.AddScoped<IContratoBeneficioRepository, ContratoBeneficioRepository>();
+        services.AddScoped<IContratoElegibilidadeRepository, ContratoElegibilidadeRepository>();
+        services.AddScoped<IContratoElegibilidadeCargoRepository, ContratoElegibilidadeCargoRepository>();
+        services.AddScoped<IContratoElegibilidadeGradeRepository, ContratoElegibilidadeGradeRepository>();
+        services.AddScoped<IContratoGrauParentescoRepository, ContratoGrauParentescoRepository>();
+        services.AddScoped<IContratoPlanoRepository, ContratoPlanoRepository>();
+        services.AddScoped<IContratoSubestipulanteRepository, ContratoSubestipulanteRepository>();
         #endregion
 
         services.AddScoped<INotificador, Notificador>();
@@ -59,6 +65,12 @@ public static class DependencyInjectionConfig
 
         #region Beneficio Service
         services.AddScoped<IContratoBeneficioService, ContratoBeneficioService>();
+        services.AddScoped<IContratoElegibilidadeService, ContratoElegibilidadeService>();
+        services.AddScoped<IContratoElegibilidadeCargoService, ContratoElegibilidadeCargoService>();
+        services.AddScoped<IContratoElegibilidadeGradeService, ContratoElegibilidadeGradeService>();
+        services.AddScoped<IContratoGrauParentescoService, ContratoGrauParentescoService>();
+        services.AddScoped<IContratoPlanoService, ContratoPlanoService>();
+        services.AddScoped<IContratoSubestipulanteService, ContratoSubestipulanteService>();
         #endregion
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
