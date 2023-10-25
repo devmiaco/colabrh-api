@@ -1,4 +1,5 @@
 ﻿using ColabRH.Business.Models.Cadastros;
+using ColabRH.Business.Models.Enums;
 using System;
 
 namespace ColabRH.Business.Models.Admissoes
@@ -17,6 +18,8 @@ namespace ColabRH.Business.Models.Admissoes
         public decimal Salario { get; set; }
         public DateTime DataAdmissao { get; set; }
         public DateTime DataLimitePreenchimento { get; set; }
+        public TipoStatusAdmissao TipoStatus { get; set; }
+        public string FotoPerfil { get; set; }
 
         public GrupoEconomico GrupoEconomico { get; set; }
         public Empresa Empresa { get; set; }

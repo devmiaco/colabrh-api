@@ -14,8 +14,10 @@ public class Empresa : Entity
     public string Numero { get; set; }
     public string Complemento { get; set; }
     public string Bairro { get; set; }
-    public string Municipio { get; set; }
-    public string Uf { get; set; }
+    public Guid MunicipioId { get; set; }
+    public Guid EstadoId { get; set; }
 
     public GrupoEconomico GrupoEconomico { get; set; }
+    public Estado Estado { get; set; }
+    public Municipio Municipio { get; set; }
 }

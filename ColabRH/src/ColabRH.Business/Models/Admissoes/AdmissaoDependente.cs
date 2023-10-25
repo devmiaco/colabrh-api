@@ -1,14 +1,16 @@
-﻿using ColabRH.Business.Models.Cadastros;
-using ColabRH.Business.Models.Enums;
+﻿using ColabRH.Business.Models.Enums;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ColabRH.Business.Models.Funcionarios;
+namespace ColabRH.Business.Models.Admissoes;
 
-public class Dependente : Entity
+public class AdmissaoDependente : Entity
 {
-    public Guid FuncionarioId { get; set; }
-    public Guid GrauParentescoId { get; set; }
-    
+    public Guid AdmissaoId { get; set; }
+
     public string Nome { get; set; }
     public DateTime DataNascimento { get; set; }
     public TipoSexo TipoSexo { get; set; }
@@ -28,6 +30,5 @@ public class Dependente : Entity
     public bool Pcd { get; set; }
     public bool DependenteIR { get; set; }
 
-    public Funcionario Funcionario { get; set; }
-    public GrauParentesco GrauParentesco { get; set; }    
+    public Admissao Admissao { get; set; }
 }
