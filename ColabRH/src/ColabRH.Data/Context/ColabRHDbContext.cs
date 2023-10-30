@@ -1,4 +1,5 @@
-﻿using ColabRH.Business.Models.Beneficios;
+﻿using ColabRH.Business.Models.Admissoes;
+using ColabRH.Business.Models.Beneficios;
 using ColabRH.Business.Models.Cadastros;
 using ColabRH.Business.Models.Funcionarios;
 using Microsoft.EntityFrameworkCore;
@@ -47,6 +48,16 @@ public class ColabRHDbContext : DbContext
     public DbSet<Dependente> Dependentes { get; set; }
     public DbSet<FuncionarioBeneficio> FuncionarioBeneficios { get; set; }
     public DbSet<DependenteBeneficio> DependenteBeneficios { get; set; }
+    #endregion
+
+    #region Admissao
+    public DbSet<Admissao> Admissoes { get; set; }
+    public DbSet<AdmissaoDadosBancarios> AdmissoesDadosBancarios { get; set; }
+    public DbSet<AdmissaoDadosPessoais> AdmissoesDadosPessoais { get; set; }
+    public DbSet<AdmissaoDependente> AdmissoesDependentes { get; set; }
+    public DbSet<AdmissaoDocumento> AdmissoesDocumentos { get; set; }
+    public DbSet<AdmissaoEndereco> AdmissoesEndereco { get; set; }
+    public DbSet<AdmissaoFormacaoAcademica> AdmissoesFormacoesAcademica { get; set; }
     #endregion
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

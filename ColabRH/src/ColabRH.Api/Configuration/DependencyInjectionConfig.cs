@@ -1,13 +1,16 @@
 ﻿using ColabRH.Api.Extensions;
 using ColabRH.Business.Interfaces;
+using ColabRH.Business.Interfaces.Admissoes;
 using ColabRH.Business.Interfaces.Beneficios;
 using ColabRH.Business.Interfaces.Cadastros;
 using ColabRH.Business.Interfaces.Funcionarios;
 using ColabRH.Business.Notificacoes;
+using ColabRH.Business.Services.Admissoes;
 using ColabRH.Business.Services.Beneficios;
 using ColabRH.Business.Services.Cadastros;
 using ColabRH.Business.Services.Funcionarios;
 using ColabRH.Data.Context;
+using ColabRH.Data.Repository.Admissoes;
 using ColabRH.Data.Repository.Beneficios;
 using ColabRH.Data.Repository.Cadastros;
 using ColabRH.Data.Repository.Funcionarios;
@@ -56,6 +59,17 @@ public static class DependencyInjectionConfig
         services.AddScoped<IDependenteBeneficioRepository, DependenteBeneficioRepository>();
         #endregion
 
+        #region Admissao Repository
+        services.AddScoped<IAdmissaoRepository, AdmissaoRepository>();
+        services.AddScoped<IAdmissaoDadosBancariosRepository, AdmissaoDadosBancariosRepository>();
+        services.AddScoped<IAdmissaoDadosPessoaisRepository, AdmissaoDadosPessoaisRepository>();
+        services.AddScoped<IAdmissaoDependenteRepository, AdmissaoDependenteRepository>();
+        services.AddScoped<IAdmissaoDocumentoRepository, AdmissaoDocumentoRepository>();
+        services.AddScoped<IAdmissaoEnderecoRepository, AdmissaoEnderecoRepository>();
+        services.AddScoped<IAdmissaoFormacaoAcademicaRepository, AdmissaoFormacaoAcademicaRepository>();
+        #endregion
+
+
         services.AddScoped<INotificador, Notificador>();
 
         #region Cadastro Service        
@@ -88,6 +102,16 @@ public static class DependencyInjectionConfig
         services.AddScoped<IFuncionarioBeneficioService, FuncionarioBeneficioService>();
         services.AddScoped<IDependenteService, DependenteService>();
         services.AddScoped<IDependenteBeneficioService, DependenteBeneficioService>();
+        #endregion
+
+        #region Admissao Service
+        services.AddScoped<IAdmissaoService, AdmissaoService>();
+        services.AddScoped<IAdmissaoDadosBancariosService, AdmissaoDadosBancariosService>();
+        services.AddScoped<IAdmissaoDadosPessoaisService, AdmissaoDadosPessoaisService>();
+        services.AddScoped<IAdmissaoDependenteService, AdmissaoDependenteService>();
+        services.AddScoped<IAdmissaoDocumentoService, AdmissaoDocumentoService>();
+        services.AddScoped<IAdmissaoEnderecoService, AdmissaoEnderecoService>();
+        services.AddScoped<IAdmissaoFormacaoAcademicaService, AdmissaoFormacaoAcademicaService>();
         #endregion
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

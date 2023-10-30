@@ -12,6 +12,8 @@ public class Dependente : Entity
     public string Nome { get; set; }
     public DateTime DataNascimento { get; set; }
     public TipoSexo TipoSexo { get; set; }
+    public TipoGenero TipoGenero { get; set; }
+    public TipoCorRaca TipoCorRaca { get; set; }
     public TipoEstadoCivil TipoEstadoCivil { get; set; }
     public DateTime? DataCasamento { get; set; }
     public string NomeMae { get; set; }
@@ -22,7 +24,10 @@ public class Dependente : Entity
     public string Rg { get; set; }
     public string Cns { get; set; }
     public string NumeroNascidoVivo { get; set; }
-    
+    public bool Universitario { get; set; }
+    public bool Pcd { get; set; }
+    public bool DependenteIR { get; set; }
+
     public Funcionario Funcionario { get; set; }
     public GrauParentesco GrauParentesco { get; set; }    
 }

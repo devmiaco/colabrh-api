@@ -36,13 +36,7 @@ internal class EmpresaMapping : IEntityTypeConfiguration<Empresa>
 
         builder.Property(p => p.Bairro)
             .HasColumnType("varchar(100)");
-
-        builder.Property(p => p.Municipio)
-            .HasColumnType("varchar(150)");
-
-        builder.Property(p => p.Uf)
-            .HasColumnType("varchar(2)");
-
+        
         builder.ToTable("Empresas");
     }
 }

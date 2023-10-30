@@ -81,8 +81,8 @@ public class EmpresaController : MainController
         atualizacao.Numero = empresa.Numero;
         atualizacao.Complemento = empresa.Complemento;
         atualizacao.Bairro = empresa.Bairro;
-        atualizacao.Municipio = empresa.Municipio;
-        atualizacao.Uf = empresa.Uf;        
+        atualizacao.MunicipioId = empresa.MunicipioId;
+        atualizacao.EstadoId = empresa.EstadoId;        
 
         await _service.Atualizar(atualizacao);
 
