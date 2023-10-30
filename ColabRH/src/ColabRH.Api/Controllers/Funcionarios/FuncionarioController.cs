@@ -102,8 +102,8 @@ public class FuncionarioController : MainController
         atualizacao.Numero = funcionario.Numero;
         atualizacao.Complemento = funcionario.Complemento;
         atualizacao.Bairro = funcionario.Bairro;
-        atualizacao.Municipio = funcionario.Municipio;
-        atualizacao.Uf = funcionario.Uf;
+        atualizacao.MunicipioId = funcionario.MunicipioId;
+        atualizacao.EstadoId = funcionario.EstadoId;
 
         await _service.Atualizar(atualizacao);
 
