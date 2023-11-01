@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ColabRH.Business.Models.Cadastros;
+using System;
 
-namespace ColabRH.Business.Models.Atendimento
+namespace ColabRH.Business.Models.Atendimento;
+
+public class CategoriaTipoSolicitacao : Entity
 {
-    internal class CategoriaTipoSolicitacao
-    {
-    }
+    public Guid GrupoEconomicoId { get; set; }
+    public string Nome { get; set; }
+    public bool Ativo { get; set; }
+
+    public GrupoEconomico GrupoEconomico { get; set; }
 }

@@ -1,16 +1,19 @@
 ﻿using ColabRH.Api.Extensions;
 using ColabRH.Business.Interfaces;
 using ColabRH.Business.Interfaces.Admissoes;
+using ColabRH.Business.Interfaces.Atendimento;
 using ColabRH.Business.Interfaces.Beneficios;
 using ColabRH.Business.Interfaces.Cadastros;
 using ColabRH.Business.Interfaces.Funcionarios;
 using ColabRH.Business.Notificacoes;
 using ColabRH.Business.Services.Admissoes;
+using ColabRH.Business.Services.Atendimento;
 using ColabRH.Business.Services.Beneficios;
 using ColabRH.Business.Services.Cadastros;
 using ColabRH.Business.Services.Funcionarios;
 using ColabRH.Data.Context;
 using ColabRH.Data.Repository.Admissoes;
+using ColabRH.Data.Repository.Atendimento;
 using ColabRH.Data.Repository.Beneficios;
 using ColabRH.Data.Repository.Cadastros;
 using ColabRH.Data.Repository.Funcionarios;
@@ -69,6 +72,12 @@ public static class DependencyInjectionConfig
         services.AddScoped<IAdmissaoFormacaoAcademicaRepository, AdmissaoFormacaoAcademicaRepository>();
         #endregion
 
+        #region Atendimento Repository
+        services.AddScoped<ICategoriaTipoSolicitacaoRepository, CategoriaTipoSolicitacaoRepository>();
+        services.AddScoped<ITipoSolicitacaoRepository, TipoSolicitacaoRepository>();
+        services.AddScoped<ISolicitacaoRepository, SolicitacaoRepository>();
+        #endregion
+
 
         services.AddScoped<INotificador, Notificador>();
 
@@ -112,6 +121,12 @@ public static class DependencyInjectionConfig
         services.AddScoped<IAdmissaoDocumentoService, AdmissaoDocumentoService>();
         services.AddScoped<IAdmissaoEnderecoService, AdmissaoEnderecoService>();
         services.AddScoped<IAdmissaoFormacaoAcademicaService, AdmissaoFormacaoAcademicaService>();
+        #endregion
+
+        #region Atendimento Service
+        services.AddScoped<ICategoriaTipoSolicitacaoService, CategoriaTipoSolicitacaoService>();
+        services.AddScoped<ITipoSolicitacaoService, TipoSolicitacaoService>();
+        services.AddScoped<ISolicitacaoService, SolicitacaoService>();
         #endregion
 
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

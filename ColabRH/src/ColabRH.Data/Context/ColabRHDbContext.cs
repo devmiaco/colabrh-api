@@ -1,4 +1,5 @@
 ﻿using ColabRH.Business.Models.Admissoes;
+using ColabRH.Business.Models.Atendimento;
 using ColabRH.Business.Models.Beneficios;
 using ColabRH.Business.Models.Cadastros;
 using ColabRH.Business.Models.Funcionarios;
@@ -58,6 +59,12 @@ public class ColabRHDbContext : DbContext
     public DbSet<AdmissaoDocumento> AdmissoesDocumentos { get; set; }
     public DbSet<AdmissaoEndereco> AdmissoesEndereco { get; set; }
     public DbSet<AdmissaoFormacaoAcademica> AdmissoesFormacoesAcademica { get; set; }
+    #endregion
+
+    #region Atendimento
+    public DbSet<CategoriaTipoSolicitacao> CategoriasTipoSolicitacao { get; set; }
+    public DbSet<TipoSolicitacao> TiposSolicitacao { get; set; }
+    public DbSet<Solicitacao> Solicitacoes { get; set; }
     #endregion
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

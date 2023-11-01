@@ -450,6 +450,102 @@ namespace ColabRH.Data.Migrations
                     b.ToTable("AdmissoesFormacoesAcademica");
                 });
 
+            modelBuilder.Entity("ColabRH.Business.Models.Atendimento.CategoriaTipoSolicitacao", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("GrupoEconomicoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GrupoEconomicoId");
+
+                    b.ToTable("CategoriasTipoSolicitacao");
+                });
+
+            modelBuilder.Entity("ColabRH.Business.Models.Atendimento.Solicitacao", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Anexo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Assunto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataAbertura")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataFechamento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("FuncionarioId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("GrupoEconomicoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TipoSolicitacaoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("TipoStatus")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("UsuarioResponsavel")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FuncionarioId");
+
+                    b.HasIndex("GrupoEconomicoId");
+
+                    b.HasIndex("TipoSolicitacaoId");
+
+                    b.ToTable("Solicitacoes");
+                });
+
+            modelBuilder.Entity("ColabRH.Business.Models.Atendimento.TipoSolicitacao", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("CategoriaTipoSolicitacaoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("GrupoEconomicoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoriaTipoSolicitacaoId");
+
+                    b.HasIndex("GrupoEconomicoId");
+
+                    b.ToTable("TiposSolicitacao");
+                });
+
             modelBuilder.Entity("ColabRH.Business.Models.Beneficios.ContratoBeneficio", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1565,6 +1661,63 @@ namespace ColabRH.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Admissao");
+                });
+
+            modelBuilder.Entity("ColabRH.Business.Models.Atendimento.CategoriaTipoSolicitacao", b =>
+                {
+                    b.HasOne("ColabRH.Business.Models.Cadastros.GrupoEconomico", "GrupoEconomico")
+                        .WithMany()
+                        .HasForeignKey("GrupoEconomicoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GrupoEconomico");
+                });
+
+            modelBuilder.Entity("ColabRH.Business.Models.Atendimento.Solicitacao", b =>
+                {
+                    b.HasOne("ColabRH.Business.Models.Funcionarios.Funcionario", "Funcionario")
+                        .WithMany()
+                        .HasForeignKey("FuncionarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ColabRH.Business.Models.Cadastros.GrupoEconomico", "GrupoEconomico")
+                        .WithMany()
+                        .HasForeignKey("GrupoEconomicoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ColabRH.Business.Models.Atendimento.TipoSolicitacao", "TipoSolicitacao")
+                        .WithMany()
+                        .HasForeignKey("TipoSolicitacaoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Funcionario");
+
+                    b.Navigation("GrupoEconomico");
+
+                    b.Navigation("TipoSolicitacao");
+                });
+
+            modelBuilder.Entity("ColabRH.Business.Models.Atendimento.TipoSolicitacao", b =>
+                {
+                    b.HasOne("ColabRH.Business.Models.Atendimento.CategoriaTipoSolicitacao", "CategoriaTipoSolicitacao")
+                        .WithMany()
+                        .HasForeignKey("CategoriaTipoSolicitacaoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ColabRH.Business.Models.Cadastros.GrupoEconomico", "GrupoEconomico")
+                        .WithMany()
+                        .HasForeignKey("GrupoEconomicoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CategoriaTipoSolicitacao");
+
+                    b.Navigation("GrupoEconomico");
                 });
 
             modelBuilder.Entity("ColabRH.Business.Models.Beneficios.ContratoBeneficio", b =>
