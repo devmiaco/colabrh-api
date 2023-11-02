@@ -40,6 +40,7 @@ public static class DependencyInjectionConfig
         services.AddScoped<IOperadoraRepository, OperadoraRepository>();
         services.AddScoped<IProdutoRepository, ProdutoRepository>();
         services.AddScoped<IPlanoRepository, PlanoRepository>();
+        services.AddScoped<IEstadoMunicipioRepository, EstadoMunicipioRepository>();
         #endregion
 
         #region Beneficio Repository

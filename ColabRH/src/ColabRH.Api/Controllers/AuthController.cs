@@ -18,14 +18,14 @@ namespace ColabRH.Api.Controllers;
 [Route("api")]
 public class AuthController : MainController
 {
-    private readonly SignInManager<IdentityUser> _signInManager;
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly UserManager<ApplicationUser> _userManager;
     private readonly AppSettings _appSettings;
     private readonly ILogger _logger;
 
     public AuthController(INotificador notificador,
-                          SignInManager<IdentityUser> signInManager,
-                          UserManager<IdentityUser> userManager,
+                          SignInManager<ApplicationUser> signInManager,
+                          UserManager<ApplicationUser> userManager,
                           IOptions<AppSettings> appSettings,
                           IUser user, ILogger<AuthController> logger) : base(notificador, user)
     {
@@ -41,10 +41,11 @@ public class AuthController : MainController
     {
         if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-        var user = new IdentityUser
+        var user = new ApplicationUser
         {
             UserName = registerUser.Email,
             Email = registerUser.Email,
+            Name = registerUser.Name,
             EmailConfirmed = true
         };
 
@@ -124,6 +125,7 @@ public class AuthController : MainController
             {
                 Id = user.Id,
                 Email = user.Email,
+                Name = user.Name,
                 Claims = claims.Select(c => new ClaimViewModel { Type = c.Type, Value = c.Value })
             }
         };

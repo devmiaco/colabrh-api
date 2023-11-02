@@ -31,6 +31,8 @@ public class ColabRHDbContext : DbContext
     public DbSet<Operadora> Operadoras { get; set; }
     public DbSet<Produto> Produtos { get; set; }
     public DbSet<Plano> Planos { get; set; }
+    public DbSet<Estado> Estados { get; set; }
+    public DbSet<Municipio> Municipios { get; set; }
     #endregion
 
     #region Beneficios    

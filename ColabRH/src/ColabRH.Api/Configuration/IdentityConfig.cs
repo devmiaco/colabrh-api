@@ -23,7 +23,7 @@ public static class IdentityConfig
         //        configuration.GetConnectionString("DefaultConnection"),
         //        ServerVersion.AutoDetect(configuration.GetConnectionString("DefaultConnection"))));
 
-        services.AddDefaultIdentity<IdentityUser>()
+        services.AddDefaultIdentity<ApplicationUser>()
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddErrorDescriber<IdentityMensagensPortugues>()
