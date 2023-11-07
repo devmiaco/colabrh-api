@@ -1,6 +1,5 @@
 ﻿using ColabRH.Business.Models.Enums;
 using System;
-using System.Collections.Generic;
 
 namespace ColabRH.Business.Models.Cadastros;
 

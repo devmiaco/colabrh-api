@@ -13,6 +13,14 @@ public class EstadoMunicipioRepository : Repository<Estado>, IEstadoMunicipioRep
 {
     public EstadoMunicipioRepository(ColabRHDbContext db) : base(db) { }
 
+    public async Task<IEnumerable<Estado>> ObterEstado()
+    {
+        return await Db.Estados
+            .AsNoTracking()
+            .OrderBy(e => e.Nome)
+            .ToListAsync();
+    }
+
     public async Task<Estado> ObterEstadoPorIBGE(string ibge)
     {
         return await Db.Estados
@@ -26,6 +34,7 @@ public class EstadoMunicipioRepository : Repository<Estado>, IEstadoMunicipioRep
         return await Db.Municipios
             .AsNoTracking()
             .Where(c => c.EstadoId == id)
+            .OrderBy(c => c.Nome)
             .ToListAsync();
     }
 

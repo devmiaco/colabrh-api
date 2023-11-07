@@ -26,7 +26,7 @@ public class EstadoMunicipioController : MainController
     [HttpGet("estado")]
     public async Task<IEnumerable<Estado>> ObterTodosEstados()
     {
-        return await _repository.ObterTodos();
+        return await _repository.ObterEstado();
     }
 
     [HttpGet("estado-ibge/{codigo}")]
